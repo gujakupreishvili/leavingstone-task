@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SecondHeaderSection() {
   return (
-    <div className='w-full bg-[#32333E] px-[6%] flex  items-center justify-between py-[22px] gap-[20px] sm:hidden'>
+    <div className='w-full bg-[#32333E] px-[6%] flex  items-center justify-between py-[22px] gap-[20px] md:hidden'>
     <p className='text-[16px] text-white font-light'>ბანკის შესახებ</p>
     <p className='text-[16px] text-white font-medium'>მონეტარული პოლიტიკა</p>
     <p className='text-[16px] text-white font-light'>ფინანსური სტაბილურობა</p>

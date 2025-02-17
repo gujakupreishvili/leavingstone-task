@@ -8,10 +8,10 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 
 export default function FirstHeaderSection() {
   return (
-    <div className='flex justify-between w-full items-center px-[6%] bg-white sm:bg-[#32333E] py-[12px]'> 
-    <Image src={Logo} alt='logo' className='sm:hidden'/>
-    <Image  src ={MobileLogo} alt ="logo " className='hidden sm:block' />
-    <div className='flex items-center gap-[20px]  sm:hidden'>
+    <div className='flex justify-between w-full items-center px-[6%] bg-white md:bg-[#32333E] py-[12px]'> 
+    <Image src={Logo} alt='logo' className='md:hidden'/>
+    <Image  src ={MobileLogo} alt ="logo " className='hidden md:block' />
+    <div className='flex items-center gap-[20px]  md:hidden'>
       <p className='text-[16px] font-medium text-[#32333E] cursor-pointer '>ბლოგი</p>
       <p className='text-[16px] font-light text-[#626264] cursor-pointer '>მედია</p>
       <p className='text-[16px] font-light text-[#626264] cursor-pointer '>კარიერა</p>
@@ -34,7 +34,7 @@ export default function FirstHeaderSection() {
         <IoIosArrowDown className='text-[#656567]' />
       </div>
     </div>
-    <GiHamburgerMenu className='text-[48px] text-[white] hidden sm:block' />
+    <GiHamburgerMenu className='text-[48px] text-[white] hidden md:block' />
   </div>
   )
 }

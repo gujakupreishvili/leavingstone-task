@@ -14,8 +14,9 @@ export default {
       },
     },
     screens: {
-      sm: { max: "963px" },
-    },
+      md: { max: "963px" },
+      sm: { max: "500px" }
+    }
   },
   plugins: [],
 } satisfies Config;
