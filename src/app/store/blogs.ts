@@ -1,13 +1,11 @@
 import axios, { AxiosError } from "axios";
-import { Dispatch } from "redux";
 import { axiosInstance } from "../lib/axiosInstance";
-
+import { Dispatch } from "redux";
 
 const GET_BLOGS = "get_blogs";
 const UPDATE_PINNED_STATUS = "update_pinned_status";
 const FILTER_BLOGS = "filter_blogs";
 const SET_LOADING = "set_loading";
-
 
 interface Blog {
   allowComments: boolean;
@@ -63,12 +61,10 @@ type BlogActionTypes =
   | FilterBlogsByAuthorAction
   | SetLoadingAction;
 
-
 const initialState: BlogState = {
   blogs: null,
-  loading: false, 
+  loading: false,
 };
-
 
 export const getBlogs =
   (skip: string, take: string) =>
@@ -94,7 +90,7 @@ export const getBlogs =
         console.log(error);
       }
     } finally {
-      dispatch({ type: SET_LOADING, payload: false }); 
+      dispatch({ type: SET_LOADING, payload: false });
     }
   };
 
@@ -127,13 +123,12 @@ export const updatePinnedStatus =
     }
   };
 
-//ვცადე ქუერით გაფილტვრა   
 export const filter =
   (id: string) => async (dispatch: Dispatch<BlogActionTypes>) => {
     dispatch({ type: SET_LOADING, payload: true });
     try {
       const response = await axiosInstance.get<BlogResponse>(
-        `Blog?authorId=${id}`,
+        `BlogAuthors?authorId=${id}`,
         {
           headers: {
             "Accept-Language": "ka",
@@ -151,7 +146,7 @@ export const filter =
         console.log(error);
       }
     } finally {
-      dispatch({ type: SET_LOADING, payload: false }); 
+      dispatch({ type: SET_LOADING, payload: false });
     }
   };
 

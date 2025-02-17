@@ -1,26 +1,30 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from "react-icons/md";
 import ListAuthors from "./searchSection/listAuthors";
-import {  useDispatch,  } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAuthorsPostById } from "@/app/store/authors";
 import { RootState } from "@/app/store/reducers";
 import ListCategories from "./searchSection/listCategories";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 
-// import { getCategoryPostsById } from "@/app/store/categories"; // Import the new action
-
 export default function FilterSection() {
   const [showAuthors, setShowAuthors] = useState(false);
-  const [selectedAuthor, setSelectedAuthor] = useState<{firstName: string; lastName: string;} | null>(null);
+  const [selectedAuthor, setSelectedAuthor] = useState<{
+    firstName: string;
+    lastName: string;
+  } | null>(null);
   const [authorId, setAuthorId] = useState<string>();
 
   const [showCategories, setShowCategories] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<{id: string;name: string;} | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<{
+    id: string;
+    name: string;
+  } | null>(null);
   const [, setCategoryId] = useState<string>();
 
   const dispatch: ThunkDispatch<RootState, unknown, AnyAction> = useDispatch();
@@ -111,11 +115,20 @@ export default function FilterSection() {
         <div className="flex items-center justify-between w-[40%] border-[1px] border-[#D1D1D1] px-[12px] h-[50px] rounded-[4px] md:w-full md:mb-[10px]">
           <p>რედაქტორის რჩეული</p>
           <label className="relative flex items-center justify-center w-5 h-5 border-2 border-[#D1D1D1] rounded-md cursor-pointer">
-        <input type="checkbox" className="peer hidden"/>
-        <svg className="w-4 h-4 text-[#6D9696] opacity-0 peer-checked:opacity-100 transition-opacity duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path fillRule="evenodd" d="M20.25 5.25a.75.75 0 0 1 1.06 0 .75.75 0 0 1 0 1.06l-12 12a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 1.06-1.06l5.47 5.47L20.25 5.25Z" clipRule="evenodd" />
-        </svg>
-    </label>
+            <input type="checkbox" className="peer hidden" />
+            <svg
+              className="w-4 h-4 text-[#6D9696] opacity-0 peer-checked:opacity-100 transition-opacity duration-200"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M20.25 5.25a.75.75 0 0 1 1.06 0 .75.75 0 0 1 0 1.06l-12 12a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 1.06-1.06l5.47 5.47L20.25 5.25Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </label>
         </div>
         <button
           onClick={getData}

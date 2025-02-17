@@ -4,11 +4,8 @@ import { TypedUseSelectorHook, useSelector, useDispatch } from "react-redux";
 import { updatePinnedStatus } from "@/app/store/blogs";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
-
-import Author from "./authorsInfo";
 import Blogs from "./blogsInfo";
-
-
+import Author from "./authorsInfo";
 
 const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
@@ -42,9 +39,5 @@ export default function Info() {
     return <Blogs onPinClick={handlePinClick} />;
   };
 
-  return (
-    <div className="w-full px-[6%]">
-      {renderContent()}
-    </div>
-  );
+  return <div className="w-full px-[6%]">{renderContent()}</div>;
 }

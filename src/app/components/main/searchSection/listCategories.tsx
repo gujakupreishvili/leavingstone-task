@@ -8,7 +8,9 @@ interface ListCategoriesProps {
   onSelectCategory: (id: string, name: string) => void;
 }
 
-export default function ListCategories({ onSelectCategory }: ListCategoriesProps) {
+export default function ListCategories({
+  onSelectCategory,
+}: ListCategoriesProps) {
   const categories = useAppSelector((state) => state.categories.categories);
 
   return (
@@ -29,7 +31,9 @@ export default function ListCategories({ onSelectCategory }: ListCategoriesProps
           </React.Fragment>
         ))
       ) : (
-        <p className="text-center py-4 text-gray-500 px-[12px]">თემატიკა ცარიელია.</p>
+        <p className="text-center py-4 text-gray-500 px-[12px]">
+          თემატიკა ცარიელია.
+        </p>
       )}
     </div>
   );

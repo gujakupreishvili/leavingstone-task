@@ -1,4 +1,3 @@
-// import { AuthorNames } from "@/app/store/authors";
 import { RootState } from "@/app/store/reducers";
 import React from "react";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
@@ -8,7 +7,6 @@ const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 interface ListAuthorsProps {
   onSelectAuthor: (id: string, firstName: string, lastName: string) => void;
 }
-
 
 export default function ListAuthors({ onSelectAuthor }: ListAuthorsProps) {
   const authors = useAppSelector((state) => state.authors.authorsNames);

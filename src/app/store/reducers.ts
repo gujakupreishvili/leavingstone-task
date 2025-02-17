@@ -1,12 +1,11 @@
 import { combineReducers } from "redux";
+import BlogReducer from "./blogs";
 import authorsReducer from "./authors";
-import blogReducer from "./blogs";
 import categoriesReducer from "./categories";
-
 
 const rootReducer = combineReducers({
   authors: authorsReducer,
-  blogs: blogReducer,
+  blogs: BlogReducer,
   categories: categoriesReducer,
 });
 
