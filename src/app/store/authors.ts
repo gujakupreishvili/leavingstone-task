@@ -2,8 +2,6 @@ import axios, { AxiosError } from "axios";
 import { Dispatch } from "redux";
 import { axiosInstance } from "../lib/axiosInstance";
 
-
-
 const AUTHOR_NAME = "AUTHOR_NAME";
 const AUTHOR_POSTS_BY_ID = "AUTHOR_POSTS_BY_ID";
 
@@ -14,7 +12,7 @@ type translations = {
   lastName: string;
   languageCode: string;
   shareDescription: string;
-  shareTitle:  null;
+  shareTitle: null;
   slug: string;
 };
 
@@ -40,16 +38,14 @@ interface AuthorsResponse {
   data: AuthorNames[];
 }
 
-
 interface AuthorsState {
   authorsData: Author | null;
-  authorsNames: AuthorNames[] | null; 
+  authorsNames: AuthorNames[] | null;
 }
-
 
 interface GetPostsAction {
   type: typeof AUTHOR_NAME;
-  payload: AuthorNames[]; 
+  payload: AuthorNames[];
 }
 
 interface GetPostsByIdAction {
@@ -95,14 +91,11 @@ export const getAuthorsNames =
 export const getAuthorsPostById =
   (id: string | undefined) => async (dispatch: Dispatch<AuthorActions>) => {
     try {
-      const response = await axiosInstance.get<Author>(
-        `BlogAuthors/${id}`,
-        {
-          headers: {
-            "Accept-Language": "ka",
-          },
-        }
-      );
+      const response = await axiosInstance.get<Author>(`BlogAuthors/${id}`, {
+        headers: {
+          "Accept-Language": "ka",
+        },
+      });
       dispatch({ type: AUTHOR_POSTS_BY_ID, payload: response.data });
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -116,7 +109,6 @@ export const getAuthorsPostById =
     }
   };
 
-
 const authorsReducer = (
   state = initialState,
   action: AuthorActions
@@ -125,12 +117,12 @@ const authorsReducer = (
     case AUTHOR_NAME:
       return {
         ...state,
-        authorsNames: action.payload, 
+        authorsNames: action.payload,
       };
     case AUTHOR_POSTS_BY_ID:
       return {
         ...state,
-        authorsData: action.payload, 
+        authorsData: action.payload,
       };
 
     default:

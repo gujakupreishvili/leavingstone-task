@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import FilterSection from "./filterSection";
 import Info from "./info";
-import {  useDispatch,  } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getBlogs } from "@/app/store/blogs";
 import { AppDispatch } from "@/app/store/configureStore";
 import { getAuthorsNames } from "@/app/store/authors";
@@ -20,7 +20,7 @@ export default function Main() {
   }, [dispatch]);
   return (
     <>
-      <BlogImg/>
+      <BlogImg />
       <Pinsection />
       <FilterSection />
       <Info />

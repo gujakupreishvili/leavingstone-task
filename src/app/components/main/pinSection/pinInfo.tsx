@@ -7,7 +7,6 @@ import { MdOutlineStickyNote2 } from "react-icons/md";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { RootState } from "@/app/store/reducers";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 

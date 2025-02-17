@@ -1,7 +1,6 @@
 import { Dispatch } from "redux";
-import axios, { AxiosError } from "axios";
 import { axiosInstance } from "../lib/axiosInstance";
-
+import axios, { AxiosError } from "axios";
 
 const CATEGORIES = "GET_CATEGORIES";
 const CATEGORY_POSTS_BY_ID = "GET_CATEGORY_POSTS_BY_ID";
@@ -26,7 +25,7 @@ interface CategoryPosts {
 
 interface CategoriesState {
   categories: Category[];
-  categoryPosts: CategoryPosts | null; 
+  categoryPosts: CategoryPosts | null;
 }
 
 interface GetCategoriesAction {
@@ -40,7 +39,6 @@ interface GetCategoryPostsByIdAction {
 }
 
 type CategoryActions = GetCategoriesAction | GetCategoryPostsByIdAction;
-
 
 const initialState: CategoriesState = {
   categories: [],
